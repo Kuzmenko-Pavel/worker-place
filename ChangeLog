@@ -1,0 +1,732 @@
+[33ma9628b3 ([1;36mHEAD[m[33m, [1;31morigin/master[m[33m, [1;31morigin/HEAD[m[33m, [1;32mmaster[m[33m)[m add lib
+[33mcb4c70e[m change notif
+[33meb6d8fe[m change html notif
+[33m7853c0f[m speed optimization
+[33m66a886c[m fix js syntax
+[33m5cb71b5[m change timer
+[33m89d5fef[m first notification version
+[33mdcc5719[m change sqlite
+[33mc0d76c7[m fix recomendet stats
+[33m7be11a6[m add brending
+[33m16dfedc ([1;31morigin/2sql[m[33m)[m fix
+[33mbd9d7fc[m update
+[33m0139675[m add custom header footer
+[33m2c67338 ([1;31morigin/full_text[m[33m)[m css
+[33m9ba400e[m fix
+[33mae72f33[m retargeting template
+[33mefb368f[m fix param
+[33m975d442[m update clisk
+[33m5a009aa[m add webp support
+[33mcee8548[m rm console.log
+[33m65c67b4[m Add recomendet algoritm
+[33m7113a39[m fix
+[33m29c0005[m fix time targeting
+[33m97bd86c[m geo fix
+[33m414334b[m fix retargeting order
+[33m5e69389[m s
+[33mb8b5088[m Merge remote-tracking branch 'origin/sql_otp'
+[33m3957c21 ([1;31morigin/sql_otp[m[33m)[m sql optimization complited
+[33mb91c0a2[m change sql
+[33m59a3af7[m add sqlite install sh
+[33m52452f5[m optimization sql query
+[33md3e3f67[m delete image hover
+[33m16a0cd1[m #1 @0 image hover
+[33m655df83[m rating
+[33m593791e[m click
+[33maacb80c[m fast fix retargeting query len
+[33m2f3ccd5[m add validation
+[33m0cbf93c[m add exeptoin qery log
+[33m29ec965[m add qery log
+[33m0271727[m log fix
+[33m6b8a0ba[m transaction change
+[33m1c33f3a[m token fix
+[33m3e4027c[m fix recomendet offer
+[33mf6d26c2[m update sql
+[33m3c1d20e[m update device targeting
+[33m4b10a8c ([1;31morigin/categor[m[33m)[m category fix
+[33m4cf8c15 ([1;31morigin/time_targeting[m[33m)[m fix time targeting
+[33maa8e668 ([1;31morigin/stable[m[33m, [1;32mstable[m[33m)[m add recomendet offer
+[33mbcdef06[m add account id
+[33mbf3b8d8[m change load
+[33m810790f[m change load
+[33m9d3bcac[m fix reindex
+[33m9632b20[m Merge remote-tracking branch 'origin/localStorage' into Reindex
+[33m29c06df[m change installer
+[33m8d0e99a[m chenge reindex
+[33mdb20b7a[m update log
+[33mb434c74[m gange sigpipe
+[33m9d56174[m chenge dummy worker
+[33m81994bb[m chenge dummy worker
+[33m4e87581[m fast disable
+[33mf3666cc[m disable retargeting
+[33ma5e59af[m disable message
+[33m35a19ee[m retargeting fix
+[33m7f64979[m add block log, adload analytics, ie fix
+[33m07fe85e[m IE7 fix
+[33mdc544b8[m fix status page
+[33mb0d7c71[m store
+[33m7f5944d[m 99% complite
+[33me9def87[m select retargeting offer complite
+[33mf63497f[m Merge remote-tracking branch 'origin/master' into localStorage
+[33md68a1e9[m rating fix
+[33m483714d[m обработка post данных, и уникальность показа
+[33mab2fa5e[m Merge remote-tracking branch 'origin/master' into localStorage
+[33m8fd7139[m rating fix
+[33m4ac3891[m Merge remote-tracking branch 'origin/master' into localStorage
+[33m9beda57[m fix bad request
+[33md7f4308[m fix bad req
+[33mc5d287f[m change rating load
+[33mf6c2023[m change rating load
+[33m130f51f[m остановился на изменении запроса с учетом локал стореджа
+[33m64beef3[m Merge remote-tracking branch 'origin/master' into localStorage
+[33meffd6fa[m Add Analytic Click
+[33m86ec3c4[m change template
+[33m0a8708f[m Merge remote-tracking branch 'origin/master' into localStorage
+[33mce2af9b[m fix dummy social impression and analytyc
+[33m9fd941e[m chenge parans
+[33m2903981[m templete bot fix
+[33mc7a0424[m add google statictic
+[33m5cb629d[m template fix
+[33meedbd6c[m template fix
+[33m7fff91c[m geo tergeting fix
+[33m674ce13[m fix autovacum end forenkey
+[33m5ad1d45[m retargeting query fix
+[33mfcaa059[m Merge branch 'master' of gitlab.yottos.com:root/worker
+[33m5270757[m fix geo
+[33m3516133[m template fix
+[33me356bc3[m test dummy
+[33m15deffb[m Merge branch 'master' of gitlab.yottos.com:root/worker
+[33mb5b2f25[m fix
+[33mfa9d7ee[m fast fix
+[33m58d1b2f[m fix informer and campaign bag
+[33m9644605[m clear template
+[33me7ffd95[m Merge branch 'fix' of gitlab.yottos.com:root/worker into fix
+[33mcaa1990[m fix
+[33meead8ca[m fix install
+[33m5170ff4[m fix hold
+[33m30d9365[m Merge branch 'fix' of gitlab.yottos.com:root/worker into fix
+[33mc1c5dba[m fix time trgering
+[33me0f55ab[m targeting fix
+[33mf132afc[m retargeting
+[33ma92972a[m fix backlog
+[33m9a61483[m fix
+[33mf028e0c[m fix redirect
+[33m7355df6[m fix
+[33mae9cd23[m fix retargeting order
+[33mef8378f[m убрал утечку в виртуальной памяти, гдето нити текут, вобше они не нужны там
+[33m0c1daaa[m гребаные cookies
+[33m2f93959[m delete offer tail хз что это бля, сука напридумывают херни
+[33med50c0b[m add lib
+[33m6203aa2[m clean
+[33m03f352e[m clean
+[33m9e415c4 ([1;33mtag: 1.0[m[33m)[m fix targeting
+[33m001af5e[m fix rating
+[33ma14a1ae[m without history
+[33mbb4c4fc[m updat
+[33m3d87982[m updat
+[33m550cbe9[m fix template
+[33m2573689[m add https
+[33m9d014e7[m update sql
+[33m8ce4a42[m update redis client
+[33m72a5824[m update worker old
+[33m34788fa[m work old
+[33ma1aadd0[m change defaylt config
+[33mb96c92d[m old alex worker
+[33m8021a73[m Merge branch 'master' of /home/git/repositories/root/worker into worker
+[33ma928988[m worker
+[33m6922a20[m merge worker
+[33mcaea411[m load rating fix
+[33m36a72a6[m load rating fix
+[33mee3771e[m old key for category
+[33m6df1cc0[m status fix
+[33mb6e2534[m category fix, banner simple algorythm
+[33m495b13b[m new key
+[33m72d23a1[m new key
+[33m51d2a9d[m category search alpha
+[33m026089d[m category alpha
+[33ma870aa7[m category search
+[33m1e514ee[m ignore adds
+[33m94e9806[m context search
+[33mdc75fb4[m stable worker
+[33m00c18b7[m clean
+[33me567f23[m free memory check
+[33macc7526[m free memory check
+[33me561dc3[m retargeting log
+[33m8129b94[m retargeting counter
+[33m6ccb81d[m return
+[33m4c70cfd[m branch fix
+[33m29e97aa[m fix dummy offer branch
+[33mfb566c2[m NL30 return
+[33mf3bf141[m branch fix
+[33mda86faa[m fix segfoult
+[33md6ad666[m offer long log
+[33ma423c30[m offer long log
+[33mbe4132a[m server name fix
+[33m4fd8bce[m cpu and ram status
+[33m19128ae[m sphinx log detail
+[33m436fcd1[m status and full
+[33mdea996d[m status and full
+[33m8148719[m status and full
+[33m41f6691[m timeout redises
+[33ma63bac8[m config revert
+[33m823a613[m config fix
+[33m3aa829e[m redis client log
+[33mcd0e7cb[m redis client log
+[33md2f3707[m redis client log
+[33m0e89697[m day fix
+[33m3b82039[m day fix
+[33mbe94282[m log redis ka
+[33m8d0e9a8[m status fix
+[33m4f26816[m status fix
+[33m6f79392[m remove log clear offer hostory
+[33mf656f48[m redis client
+[33mf6ae140[m redis client
+[33meb3fd28[m mq logging
+[33mf7b6570[m redis client
+[33m0734cf0[m redis client
+[33m00243eb[m redis client
+[33m203bf33[m redis client log
+[33m53d2553[m offer history update
+[33m9d48d07[m offer history update
+[33m7d510a8[m offer history fix
+[33mf8d1f50[m logger fix
+[33md2dd8fc[m logger clear
+[33m6d25717[m logger clear
+[33m84997b0[m hostory fix
+[33maec2f20[m redis exists fix
+[33m4878dab[m redis exists fix
+[33m27d3678[m mem fix
+[33m28f127d[m moved to simple redis client
+[33m51418a3[m libredis remove
+[33m9cb76bc[m moved to simple redis client
+[33m585f7b0[m libredis remove
+[33m92b1f26[m libredis remove
+[33mae7c5f9[m libredis remove
+[33m35ee6a5[m libredis remove
+[33m2f494ae[m libredis remove
+[33me2340b5[m Merge branch 'master' of gitlab.yottos.com:root/worker
+[33mc47922e[m moved to simple redis client
+[33m556e7ca[m chmow init script
+[33mad5415e[m uniqueHits fix
+[33mb65714e[m config monitor
+[33m11d6c5d[m config monitor
+[33m5f05ec0[m Merge branch 'master' of gitlab.yottos.com:root/worker
+[33m2aa3e8e[m config monitor
+[33m61206c6[m init script
+[33m66fe04e[m cpu and mem size
+[33m970c3c1[m fix to htop
+[33m258452f[m deb build fix
+[33mbd4d5f6[m change group & user
+[33m722745c[m change group & user
+[33mdaf4f9e[m change group & user
+[33mdacd191[m install fix
+[33m37c210b[m session clear
+[33mbc01fc8[m session clear
+[33m765b5a8[m session clear
+[33m666883f[m cpu usage
+[33mdfa86e0[m cpu monitor
+[33m2efdae7[m cpu monitor
+[33m8a511d9[m cpu monitor
+[33ma0e2e6f[m requests fix
+[33m9516544[m requests fix
+[33md1edd15[m requests fix
+[33mf50d68b[m requests fix
+[33m98064f2[m requests fix
+[33me554300[m requests fix
+[33m5fafb83[m requests fix
+[33m9cc2fa3[m requests fix
+[33m48f66cb[m requests fix
+[33m3db5bb9[m requests fix
+[33m67d09c3[m requests fix
+[33mdddf66a[m requests fix
+[33m8ed8e93[m configure fix
+[33mcb25d4d[m doc fix
+[33m97155d9[m split offers
+[33mdd3cd40[m split offers
+[33ma957ae1[m split offers
+[33mcf45f21[m split offers
+[33m994a3e3[m db commit
+[33m986c920[m db commit
+[33m10ad8b6[m db commit
+[33m84b306a[m db index
+[33mb65ed80[m logging
+[33mdab0f6c[m logging
+[33mfab97fb[m sphinx request fix
+[33m6285d4d[m sphinx request fix
+[33m4411359[m sphinx request fix
+[33m35af243[m sphinx request fix
+[33m335fd5b[m ris leafs mark
+[33m9c4b958[m clear retargeting
+[33mcc76f91[m new retargeting and targeting
+[33mb5005ce[m new retargeting and targeting
+[33mf6b921a[m new retargeting and targeting
+[33m931b00c[m new retargeting and targeting
+[33m8e4b6ef[m new retargeting and targeting
+[33m5e6582e[m new retargeting
+[33m52df13a[m new retargeting
+[33mb44ee27[m new retargeting
+[33m8c7c132[m ris retargeting fix
+[33mbf9332e[m ris retargeting fix
+[33m53f10c8[m ris retargeting fix
+[33maa3928f[m ris retargeting fix
+[33mec269b3[m ris retargeting fix
+[33mefd84a6[m ris retargeting fix
+[33md27a0b9[m ris retargeting fix
+[33m0c54546[m ris retargeting fix
+[33me9f9d52[m ris retargeting fix
+[33m7d2289d[m ris retargeting fix
+[33mbf5e12f[m ris retargeting fix
+[33meb64375[m merge retargeting fix
+[33m814624b[m merge retargeting fix
+[33md5be3db[m offers logging
+[33m5853386[m retargeting unique
+[33mc765254[m retargeting unique
+[33md2f735e[m retargeting unique
+[33mccd555f[m sphinx logging
+[33mc14a5c7[m build clen
+[33m0c3c422[m base core tune
+[33m471ddf3[m sphinx requesr tune
+[33m1301eb6[m sphinx requesr tune
+[33mbaee832[m sphinx requesr tune
+[33m6ae4167[m sphinx requesr tune
+[33mbd36e8d[m sphinx requesr tune
+[33m6b01d5c[m sphinx requesr tune
+[33m78c4bba[m switch to worker index
+[33mdef79b7[m offers update fix
+[33m9ec4feb[m ampq retun
+[33m3b8021d[m retargeting len fix
+[33m23baeee[m retargeting len fix
+[33md08f624[m branch mark fix
+[33m8fac383[m check sphinx filter delete
+[33m972fff3[m check sphinx filter delete
+[33mb895ff4[m clean up
+[33mf281599[m clean up
+[33m0ffc31f[m clean up
+[33mfb56c07[m retargeting refactoring
+[33m2739892[m mark retargeting
+[33m610ec6f[m mark tail
+[33m78c4bd5[m clean
+[33mf4075f3[m clean
+[33m4cf2892[m clean
+[33m1df9fc8[m clean
+[33m634acc5[m clean
+[33ma9fa2ba[m clean
+[33mf4b40df[m clean
+[33m4d1d8c9[m clean
+[33md861b74[m clean
+[33m3a1ab09[m ris fix
+[33ma9f4251[m clean
+[33m45c8d46[m clean
+[33m53bcaa3[m core refactoring
+[33mf7de815[m core refactoring
+[33mfc5d6fc[m clean up
+[33m94f7120[m clean up
+[33mb84b8fc[m logging fix
+[33mc737942[m logging fix
+[33mdaa096c[m campaign allowed fix
+[33m71c60b6[m campaign allowed fix
+[33m9a0819d[m campaign allowed fix
+[33m7321d53[m campaign allowed fix
+[33m9082b71[m campaign allowed fix
+[33mb98a6e4[m campaign allowed fix
+[33m0f558fc[m campaign allowed fix
+[33m90bceff[m campaign allowed fix
+[33m9a855a8[m campaign allowed fix
+[33med2bb57[m refactoing Core
+[33m8ade8ea[m refactoing Core
+[33m9a94816[m refactoing Core
+[33m94f8eaa[m refactoing Core
+[33m813b80e[m refactoing Core
+[33mdeefdde[m geo & tmp table refactoring
+[33mc9e1d1a[m temp table class
+[33mc5ca44e[m ris refactoring
+[33m386e603[m tail offer to sqlite
+[33m0d5ea49[m tail offer to sqlite
+[33m7e108b6[m tail offer to sqlite
+[33m28b8378[m tail offer to sqlite
+[33m24bc003[m account update fix
+[33m234b831[m account update fix
+[33m550f316[m social campaign fix
+[33m89c6c63[m social campaign fix
+[33md8f95ca[m social campaign fix
+[33m0df98cb[m campaign for all fix
+[33m5b51b70[m campaign for all fix
+[33me290461[m Merge branch 'master' of gitlab.yottos.com:root/worker
+[33m8bbd94a[m informer update fix
+[33m03445a7[m Merge branch 'master' of gitlab.yottos.com:root/worker
+[33m938a553[m campaign split
+[33m61ae6a1[m Merge branch 'master' of gitlab.yottos.com:root/worker
+[33m3c24b00[m campaign split
+[33m87565ff[m Merge branch 'master' of gitlab.yottos.com:root/worker
+[33m32087d8[m Merge branch 'master' of gitlab.yottos.com:root/worker
+[33m2128331[m campaign split
+[33m67f7f7b[m campaign split
+[33m50a3a4c[m Merge branch 'master' of gitlab.yottos.com:root/worker
+[33m9105de9[m campaign split
+[33mf64bccc[m Merge branch 'master' of gitlab.yottos.com:root/worker
+[33me547ee9[m campaign split
+[33m64432dc[m Merge branch 'master' of gitlab.yottos.com:root/worker
+[33me67e5b8[m added ignore
+[33m9f90d89[m Merge commit '7eda8a5'
+[33m7eda8a5[m split request for campaign out
+[33mcddb26f[m tmp table removed
+[33m79cab04[m signel hanlers added
+[33m02de899[m tmp table removed
+[33me22874b[m clear sessions
+[33m3f151d1[m clear sessions
+[33m31afdf8[m informer update fix
+[33m834588c[m retargeting fix
+[33m3b6c053[m retargeting fix
+[33me28c92a[m users fix
+[33m3760959[m indexes use
+[33m962cdc2[m indexes use
+[33mdd5bf10[m indexes use
+[33m6438cec[m indexes fix
+[33m6af00d2[m indexes fix
+[33m6d4a391[m indexes fix
+[33mfcf29cf[m informer request
+[33m319ad8a[m account block/unblock
+[33m2204dd3[m informer update fix
+[33m7b82f92[m allowed acconts fix
+[33m8a6c2bd[m allowed acconts fix
+[33m3931a2e[m allowed acconts fix
+[33m66f7826[m allowed acconts fix
+[33m34db8d4[m allowed acconts fix
+[33mdfec6ce[m allowed acconts fix
+[33m5880b0a[m offer_by_campaign_unique fix
+[33md0dc51a[m informer load fix
+[33mc7caafd[m informer load fix
+[33me29ebfd[m informer load fix
+[33m85592d4[m informer load fix
+[33m24b5aa8[m informer load fix
+[33m2d64f9a[m account update
+[33m3266ba7[m fix session to unsigned
+[33mfcf27e4[m sqlite session
+[33m3279493[m sqlite session
+[33maa5b8f5[m sqlite session
+[33mb972260[m sqlite session
+[33m7d8d8dc[m sqlite session
+[33mcb42d25[m sqlite session
+[33m70634fe[m sphinx logging
+[33m6279e99[m redis fix
+[33m951edbb[m redis fix
+[33me8f2e01[m redis fix
+[33m4c91fd6[m redis fix
+[33md28f7d0[m redis fix
+[33m9b4d4ed[m redis timeout
+[33me945f9e[m redis fix
+[33m608f291[m redis fix
+[33md05150a[m redis fix
+[33ma278c02[m informer request fix
+[33m1cf8eff[m informer request fix
+[33m56c5264[m informer request fix
+[33me8d4299[m informer request fix
+[33mb1941b8[m informer request fix
+[33m3bffce2[m a)informer add range_short_term range_long_term range_context range_search retargeting_capacity b)campaign offer_by_campaign_unique c) history refactoring
+[33mc0c2fb2[m message queue script
+[33m3b14345[m a) save config b) new message queue commands c) new parametr offer_by_campaign_unique d) new algorithm in ris
+[33m191640b[m a) save config b) new message queue commands c) new parametr offer_by_campaign_unique d) new algorithm in ris
+[33m4fe414d[m deprecated offers refactoring
+[33m41486ce[m short & long exists key check
+[33m71f279a[m init variable
+[33mc285703[m base core code clear
+[33mc6ce9b7[m Merge branch 'master' of gitlab.yottos.com:root/worker
+[33mcceffc8[m base core code clear
+[33m758caa5[m libredis fix
+[33m3800040[m shpinx code clear
+[33mcbb4fe0[m shpinx code clear
+[33m6cca0b1[m posibly mem leaks & logging
+[33m07f7c28[m logging
+[33mc0b0c23[m logging
+[33mcb0d514[m filter
+[33m83b94a3[m logging
+[33mf9ccfb0[m README: sphinx about
+[33m3742a85[m logging
+[33m6c4bde7[m set offer's branch
+[33m8118dc2[m logging
+[33m2e73ee5[m logging
+[33m5125482[m logging
+[33m676f1b5[m logging
+[33mb88150e[m logging
+[33m4ab82f8[m logging
+[33m8779c65[m logging
+[33m47a1002[m logging
+[33m28ca360[m shpinx logging match fix
+[33md5b4bd6[m shpinx logging match fix
+[33m0d36d7c[m shpinx logging match fix
+[33m7779739[m shpinx min offers limit
+[33m432504c[m shpinx min offers limit
+[33m7d273d5[m shpinx min offers limit
+[33mee2b1dd[m rsyslog & logrotage config files
+[33m4948d2c[m shpinx min offers limit
+[33md0f0f86[m shpinx min offers limit
+[33m3e4f546[m allow fix
+[33mab7e1e8[m allow fix
+[33mb94a5a7[m allow fix
+[33mddfa723[m filters fix
+[33m0c7b911[m account fix
+[33m56bbd73[m logging
+[33mcf196fa[m logging
+[33mceb5c4a[m sphinx search logging
+[33mfa08124[m sphinx search logging
+[33m3c0fb7b[m sphinx search logging
+[33ma5e8e11[m sphinx search & context fix
+[33m629b856[m sphinx search & context fix
+[33m5cd3cfc[m sphinx search & context fix
+[33mb126eb4[m logging
+[33mcb5db6e[m shpinx search logging
+[33md961225[m logging
+[33m851090f[m logging
+[33mc355337[m logging
+[33m791fd22[m logging
+[33m85e0941[m logging
+[33m5a12a3f[m geo fix
+[33m44d9a49[m geo fix
+[33m12c1ae8[m geo fix
+[33m2c411c0[m logging
+[33mded853e[m memory leaks fix
+[33m0ba6758[m memory leaks fix
+[33m530fd30[m memory leaks fix
+[33m87fe4ba[m log
+[33m3ccd50a[m definitly memory leaks custom code clean
+[33m145d67c[m stabilisation
+[33m1b859a1[m memory leaks fix
+[33m7327eee[m memory leaks fix
+[33mb69b9c7[m memory leaks fix
+[33me628a2b[m memory leaks fix
+[33m3869b6f[m memory leaks fix
+[33m29c4422[m memory leaks fix
+[33m5df9c4e[m token fix
+[33m1fc8ce4[m memory leaks#2
+[33mf6c4e41[m memory leaks#2
+[33m2b5e74d[m match logging
+[33mee1006d[m filters fix
+[33m725764f[m country and region fix
+[33m8176201[m country and region fix
+[33m06f97bd[m filter tune
+[33m114c9f4[m filter tune
+[33m8aff46a[m thematic campaign fix
+[33m353cbb3[m not valid fix
+[33m447fae2[m campaign by domain valid
+[33m0f9997f[m ==29539== LEAK SUMMARY: ==29539==    definitely lost: 0 bytes in 0 blocks ==29539==    indirectly lost: 0 bytes in 0 blocks ==29539==      possibly lost: 1,910,507 bytes in 11,591 blocks
+[33m860922a[m ==27555== LEAK SUMMARY: ==27555==    definitely lost: 0 bytes in 0 blocks ==27555==    indirectly lost: 0 bytes in 0 blocks ==27555==      possibly lost: 1,795,763 bytes in 11,283 blocks
+[33m295a329[m bypass
+[33mf32bcdc[m log impruve
+[33m7c1effc[m log impruve
+[33m4950548[m first request
+[33m6201750[m first request
+[33mb4ecba0[m null start
+[33mce0e4b0[m loop fix
+[33m0b7d186[m redis fix
+[33md5399b4[m log impruve
+[33m69c9a39[m memory leaks fix
+[33m39e5017[m memory leaks fix
+[33ma75f114[m memory leaks fix
+[33m9850c34[m memory leaks fix
+[33md527015[m memory leaks
+[33m7a056ec[m view history & redirect uri fix
+[33m23049b2[m teaser fix
+[33m45107d8[m carped collection fix
+[33m85061d0[m carped collection fix
+[33m4cce475[m carped collection fix
+[33m6094070[m zrank fix
+[33m067f5e5[m campaign update fix
+[33m4ea21ab[m initads ex
+[33m965ab0a[m initads ex
+[33mfc210da[m open sql file fix
+[33ma597f0e[m tail refactoring
+[33m1c16aaa[m db reopen fix
+[33md0eaea3[m db reopen fix
+[33mbdc9a25[m print info to std out
+[33mf2c6156[m last queue message
+[33m43a71fc[m cyrcle show
+[33m17339d4[m cyrcle show
+[33m0754e97[m doc update
+[33m9cb1c57[m uniqueHits fix
+[33m3a2d12d[m sqlite3 fix
+[33m561ab90[m redis fix
+[33m59deeda[m redis fix
+[33m3848ca8[m redis exists removed
+[33md94cd3b[m bypass algo fix
+[33m4b7adff[m bypass algo log & redis exists fix
+[33m0fabfee[m logging
+[33m8d95590[m mq fix
+[33m8b486f5[m long and short history modification
+[33mb4fcd41[m logging clean
+[33m3ba4760[m logging clen
+[33m6400d88[m zero return
+[33m5e9fdf2[m mq process optimize
+[33mbe32a2b[m items size == capacity case bypass
+[33m80aaaee[m server fix, history clear fix, configure.ac fix
+[33m5c34ab2[m backhole hotfix
+[33m4c60d99[m backhole fix
+[33m4e5c0b2[m not found fix
+[33m2133cc7[m delete fix
+[33m4321ce8[m while loop fix
+[33mcef2e92[m while loop fix
+[33mcd5764b[m indexes add
+[33m8e3acaf[m campaign load/update refactoring
+[33m9bab4e6[m expand to return size fix
+[33me175e32[m time rotation campaign
+[33med1a5a1[m campaign update fix
+[33m8987a78[m time targeting fix
+[33m5e4fe96[m Campaign2Accounts fix
+[33m92952af[m warn clen history
+[33m2363abc[m warn clen history
+[33m21900fd[m show time fix
+[33mfc83864[m time fix
+[33m126846b[m remove campaign(old style)
+[33mca1dee3[m all time campaign
+[33m57086fc[m insert a compaign
+[33me63613c[m new 01 request
+[33mab83ae0[m geo for all
+[33m05affec[m log: dynamic buffer
+[33m4697898[m log: dynamic buffer
+[33md711873[m allowed accounts
+[33mc74bd8a[m ParentDB log fix
+[33m1553ad5[m buffer overload fix
+[33mb946368[m show count
+[33m3a4a99b[m history
+[33mf1b730c[m Merge branch 'master' of gitlab.yottos.com:root/worker
+[33m727a11e[m campaing allowed fix
+[33m13364ad[m bannet template fix
+[33mc0d7fba[m new config
+[33m4c9cb38[m cookie set
+[33m386414d[m rating fix
+[33m05b0c07[m campaign allow fix
+[33m3d500d3[m path check fix, added socket check
+[33m4d78013[m mongodb fix
+[33m0f9b17a[m debian mongodb fix
+[33m5cb5a27[m debian mongodb fix
+[33m0e3d672[m add some test to config file, readme: syslog-ng fix
+[33m8ed6fb4[m test config mode
+[33m2ad5ca7[m config refactoring
+[33m8133b57[m config change
+[33m3324680[m mongo client in set, mongo db refactoring
+[33m3b2f934[m debian doc
+[33mf5be8d8[m deb fix
+[33mea77cfb[m debian tested
+[33m66f5a2f[m does not install init script in debug mode
+[33m77ffb24[m SIGHUP - reload config
+[33m44454aa[m the main database work refactoring
+[33mb57ec71[m deb dependencies fix
+[33m87332b1[m about make deb
+[33m80f5190[m uniq by campaign id
+[33m2697148[m deb make
+[33m1120531[m deb make
+[33m95cb931[m deb tested
+[33mc7439ec[m dummy version
+[33m6e841cc[m debian install
+[33me13a619[m dependencies added
+[33mc041a63[m debian build start
+[33m559f203[m mongo 2 version check
+[33m6aff443[m debian tested
+[33m943c1de[m readme:testing
+[33m30c8887[m readme:testing; minor fixes
+[33m0da68b0[m 1)error html for return error 2)memory optimization
+[33m65a50b8[m sphinx readme
+[33mfea2ef3[m retargeting_unique_by_campaign
+[33m47a6a79[m check AMQPcpp::getMessage; re-targeting readme
+[33m2bc2c96[m configure fix to find sqlite threads safe, minor fix
+[33m19f6e00[m ris
+[33m8f6ecef[m ris
+[33m0b3b35b[m ris
+[33m3c3b8f6[m ris
+[33m74f4e35[m ris
+[33m0175a99[m ris
+[33mae84781[m ris
+[33mbcc6d39[m ris fix
+[33m5c1a983[m ris fix
+[33mf3c041c[m show banner by reting
+[33mfd90117[m show banner
+[33m2ec4d6a[m history manager
+[33mcf44e86[m install fix
+[33mc855755[m README
+[33m8895329[m the install
+[33md09341d[m install
+[33m580c69a[m install 2
+[33m04b9721[m install
+[33m9ece924[m stat
+[33mbf8badb[m hot fix
+[33m2aea64f[m lib redis
+[33m5c32b7a[m glibc fix
+[33m427e4ca[m logging for database create
+[33mb58d20c[m mongo replica test: Mon Feb 17 14:02:10.954 starting new replica set monitor for replica set vsrv with seed of 213.186.121.76:27018 Mon Feb 17 14:02:10.979 successfully connected to seed 213.186.121.76:27018 for replica set vsrv Mon Feb 17 14:02:11.004 changing hosts to { 0: "213.186.121.76:27018", 1: "212.113.33.66:27018", 2: "213.186.121.199:27018" } from vsrv/ Mon Feb 17 14:02:11.004 trying to add new host 212.113.33.66:27018 to replica set vsrv Mon Feb 17 14:02:11.020 successfully connected to new host 212.113.33.66:27018 in replica set vsrv Mon Feb 17 14:02:11.020 trying to add new host 213.186.121.199:27018 to replica set vsrv Mon Feb 17 14:02:11.033 successfully connected to new host 213.186.121.199:27018 in replica set vsrv Mon Feb 17 14:02:11.033 trying to add new host 213.186.121.76:27018 to replica set vsrv Mon Feb 17 14:02:11.058 successfully connected to new host 213.186.121.76:27018 in replica set vsrv Mon Feb 17 14:02:11.214 Primary for replica set vsrv changed to 213.186.121.199:27018 Mon Feb 17 14:02:11.309 replica set monitor for replica set vsrv started, address is vsrv/212.113.33.66:27018,213.186.121.199:27018,213.186.121.76:27018 Mon Feb 17 14:02:11.309 [ReplicaSetMonitorWatcher] starting
+[33m9e18709[m clean up
+[33mc152369[m mongo & ampqcpp versions compatibility
+[33m533c04b[m sphinx config extended
+[33m8eb87f9[m add title search
+[33m9061b49[m add to ignore cmake files
+[33me233bcd[m sphinx fix1
+[33m8b97bcc[m sphinx fix
+[33m8510052[m search by context
+[33m5525597[m cmake install
+[33m1ad2f73[m build fix
+[33m163af1c[m cleanup
+[33me50c56f[m db clenup
+[33mb409e49[m start/stop compagn fix
+[33m87c0a13[m queue command fix
+[33mfc01da1[m rating update tested
+[33mf97770c[m reting update
+[33m3b4d78b[m geo fix
+[33m8c9f3bf[m geo fix
+[33m57eb863[m geo fix
+[33m73ccf3b[m fix
+[33m9dc7604[m lena first tested
+[33m145b4f2[m midlle
+[33mb519649[m cron time to config && time campagn fix
+[33m48ea3e7[m rating update
+[33m5fbbbd0[m rating done
+[33m79992ea[m retargeting all done
+[33mba27ec7[m retargeting done
+[33m403268d[m mem leaks
+[33m5ae546a[m retargeting by day
+[33m1877f4f[m tebplate to file & params format to history
+[33mfb1e652[m speed up
+[33m5a41718[m fix sphinx process return
+[33m73fec5a[m minor fix
+[33ma8c52e1[m retargeting
+[33m1bfb852[m clean interface & retargeting config
+[33mbdd18bc[m pre aplha 00
+[33m77c3eb1[m all history
+[33m113d797[m minor fixes & cmake
+[33mbecfbb0[m minor fix
+[33m3d6f602[m mongo log
+[33m71aad00[m mongo log fix: campaign id
+[33mbf624a2[m enum-switch for offer branch set
+[33m8b1beba[m all included
+[33m235f792[m Informer update
+[33mf2a1217[m mq to campaigns
+[33m13230b8[m campang update
+[33m26a3eeb[m deamonise
+[33m4b55d04[m all history async
+[33m97789e0[m asyn get deprecated offers
+[33mf1d932e[m history save
+[33m5140942[m clean up
+[33m032a297[m moved to map
+[33m4318052[m unused
+[33me70433a[m clean up
+[33m94b6ecf[m tmp table
+[33m1d8ef95[m history
+[33m34030ba[m clean
+[33mcbec769[m history
+[33m2e7538d[m history by view
+[33m344b604[m for home
+[33m336edfd[m requests
+[33m29f3544[m account and domain id get out from informer
+[33m65bb271[m clean up
+[33maec816c[m clean up
+[33m066790d[m removed unused
+[33mb777d1c[m speed up, nginx fastcgi farm, core time: 00:00:00.001375
+[33m2e85159[m nginx config
+[33m486eeee[m campaign by domain core time: 00:00:00.018811
+[33madf3901[m geo core time: 00:00:00.001059
+[33m3a10c56[m core time: 00:00:00.016859
+[33mf50b9fe[m core time: 00:00:00.000167
+[33m2e4908d[m all in sql
+[33mfb9fd11[m for sql debug
+[33m64a3132[m start
+[33m59a1f7a[m db dump
+[33mf75c2e2[m first commit
+[33mce92b6e[m sqlite mem
+[33mf2ec544[m start workerd
