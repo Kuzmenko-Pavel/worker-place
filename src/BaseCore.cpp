@@ -156,31 +156,6 @@ bool BaseCore::ProcessMQ()
                 m = mq_informer_->getMessage();
             }
         }
-        {
-            // Проверка сообщений mq_process_.#
-            mq_account_->Get(AMQP_NOACK);
-            m = mq_account_->getMessage();
-            stopCount = MAXCOUNT;
-            while(m->getMessageCount() > -1 && stopCount--)
-            {
-                mq_log_.push_back(m->getRoutingKey() + ":" +toString(m) + "</br>");
-
-                if(cfg->logMQ)
-                {
-                    std::clog<<"mq: cmd:"<<m->getRoutingKey()<<toString(m)<<std::endl;
-                }
-
-                if(m->getRoutingKey() == "account.update")
-                {
-                    std::string accountName = toString(m);
-                    pdb->AccountLoad(QUERY("login" << accountName));
-                    pdb->InformerUpdate(QUERY("user" << accountName));
-                }
-
-                mq_account_->Get(AMQP_NOACK);
-                m = mq_account_->getMessage();
-            }
-        }
     }
     catch (AMQPException &ex)
     {
@@ -207,7 +182,7 @@ void BaseCore::LoadAllEntities()
         return;
     }
     //Загрузили все кампании
-    pdb->CampaignLoadWhitOutRetargetingOnly();
+    pdb->CampaignLoad(std::string());
 
     //загрузили рейтинг
     pdb->loadRating();

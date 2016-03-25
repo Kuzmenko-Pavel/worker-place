@@ -47,7 +47,7 @@ public:
     bool ProcessMQ();
 
     /** \brief  Выводит состояние службы и некоторую статистику */
-    std::string Status(const std::string &,bool);
+    std::string Status(const std::string &);
 
        //clear session table
     bool ClearSession(bool clearAll) { return pdb->ClearSession(clearAll); }

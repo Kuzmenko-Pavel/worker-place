@@ -5,7 +5,6 @@
 #include "KompexSQLiteException.h"
 #include <boost/algorithm/string.hpp>
 #include <string>
-#include "Informer.h"
 #include "../config.h"
 
 #define SPHINX_CAPACITY_COUNT 2
@@ -18,20 +17,8 @@ HistoryManager::~HistoryManager()
 {
 }
 
-void HistoryManager::startGetUserHistory(Params *_params, Informer *inf_)
+void HistoryManager::startGetUserHistory(Params *_params)
 {
-    place_clean = false;
-    retargeting_clean = false;
-    retargeting_account_clean = false;
-    place_get = false;
-    place_find = false;
-    retargeting_get = false;
-    retargeting_find = false;
-    retargeting_account_get = false;
-    retargeting_account_find = false;
-    social_get = false;
-    social_find = false;
-    inf = inf_;
     params = _params;
     key = params->getUserKey();
 }
