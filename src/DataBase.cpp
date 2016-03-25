@@ -15,7 +15,6 @@
 #include "Log.h"
 #include "DataBase.h"
 #include "KompexSQLiteException.h"
-#include "GeoRerions.h"
 #include "Config.h"
 #include "BoostHelpers.h"
 
@@ -26,8 +25,6 @@ DataBase::DataBase(bool create) :
     reopen(false),
     dbFileName(cfg->dbpath_),
     dirName(cfg->db_dump_path_),
-    geoCsv(cfg->db_geo_csv_),
-    geoNotFoundCsv(cfg->db_geo_not_found_csv_),
     create(create),
     pStmt(nullptr)
 {
@@ -49,8 +46,6 @@ bool DataBase::openDb()
     int flags;
 
     Config::Instance()->offerSqlStr = getSqlFile("requests/getOffers.sql");
-    Config::Instance()->informerSqlStr = getSqlFile("requests/getInformer.sql");
-    Config::Instance()->campaingSqlStr = getSqlFile("requests/getCampaings.sql");
 
     try
     {
@@ -112,9 +107,6 @@ bool DataBase::openDb()
         //load db dump from directory
         readDir(dirName + "/tables");
 
-        //geo table fill
-        GeoRerions::load(pDatabase,geoCsv);
-        GeoRerions::load(pDatabase,geoNotFoundCsv);
     }
     catch(Kompex::SQLiteException &ex)
     {

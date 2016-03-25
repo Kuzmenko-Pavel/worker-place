@@ -5,12 +5,10 @@
 #include <list>
 
 #include "Offer.h"
-#include "Informer.h"
 #include "Params.h"
-#include "ParamParse.h"
 #include "Config.h"
 
-class HistoryManager : public ParamParse
+class HistoryManager
 {
 public:
     /// Счётчик обработанных запросов
@@ -34,14 +32,13 @@ public:
     virtual ~HistoryManager();
 
     //main methods
-    void startGetUserHistory(Params *params, Informer *);
     bool updateUserHistory(const Offer::Vector &outItems);
+    void startGetUserHistory(Params *params);
 
 protected:
 private:
     std::string key;
     Params *params;
-    Informer *inf;
 
     bool setDeprecatedOffers(const Offer::Vector &items);
 };

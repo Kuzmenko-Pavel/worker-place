@@ -9,7 +9,7 @@
     <user>www-data</user>
     <group>www-data</group>
     <!--путь к файлу сокета-->
-    <socket_path>/run/workerd/sock</socket_path>
+    <socket_path>/run/workerd/sockp</socket_path>
     <!--количество ниток-->
     <children>1</children>
 
@@ -20,7 +20,7 @@
     <sqlite>
         <!--файл базы-->
         <!--db>:memory:</db-->
-        <db>file:memdb2?mode=memory</db>
+        <db>./db</db>
         <!--путь к каталогу дампа sqlite базы-->
         <schema>db_dump</schema>
         <!--путь к csv файлу содержимого таблицы GeoRerions-->

@@ -3,7 +3,6 @@
 #include "CgiService.h"
 #include "Log.h"
 #include "Server.h"
-#include "GeoIPTools.h"
 /** \mainpage workerd
 
     \section usage_section Использование
@@ -18,7 +17,6 @@
 
 //static objects
 Config *cfg;
-GeoIPTools *geoip;
 
 int main(int argc, char *argv[])
 {

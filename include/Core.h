@@ -8,7 +8,7 @@
 #include "Offer.h"
 #include "Params.h"
 #include "Core_DataBase.h"
-
+#include "json.h"
 #include "HistoryManager.h"
 
 
@@ -42,26 +42,22 @@ private:
     std::string retHtml;
     ///result offers vector
     Offer::Vector vResult;
-    Offer::Vector vRetargetingResult;
+    Offer::Vector vResultSocial;
     ///all offers to show
     Offer::Map items;
-    Offer::Map SqlMapResult;
     ///campaigns to show set
     std::multiset<unsigned long long> OutPutCampaignSet;
     ///offers to show set
     std::set<unsigned long long> OutPutOfferSet;
 
     ///campaigns to show set
-    std::multiset<unsigned long long> OutPutCampaignRetargetingSet;
+    std::multiset<unsigned long long> OutPutSocialCampaignSet;
     ///offers to show set
-    std::set<unsigned long long> OutPutOfferRetargetingSet;
-
+    std::set<unsigned long long> OutPutSocialOfferSet;
     /** \brief Основной алгоритм отбора РП RealInvest Soft. */
     void RISAlgorithm(const Offer::Map &items);
-    /** \brief  Возвращает HTML для информера, содержащего предложения items */
-    std::string OffersToHtml(Offer::Vector &items, const std::string &url);
     /** \brief  Возвращает json-представление предложений ``items`` */
-    std::string OffersToJson(Offer::Vector &items);
+    nlohmann::json OffersToJson(Offer::Vector &items);
     /** \brief  Возвращает безопасную json строку (экранирует недопустимые символы) */
     static std::string EscapeJson(const std::string &str);
     /** \brief logging Core result in syslog */
