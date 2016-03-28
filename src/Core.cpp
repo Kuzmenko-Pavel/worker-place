@@ -43,6 +43,7 @@ std::string Core::Process(Params *prms)
     startCoreTime = boost::posix_time::microsec_clock::local_time();
 
     params = prms;
+    hm->startGetUserHistory(params);
     getOffers(items, params);
     RISAlgorithm(items);
     resultHtml();
@@ -79,6 +80,10 @@ void Core::ProcessSaveResults()
     request_processed_++;
 
     log();
+    if (params->getExclude().empty())
+    {
+        hm->updateUserHistory(vResult);
+    }
 
     for (Offer::it o = items.begin(); o != items.end(); ++o)
     {
@@ -148,6 +153,7 @@ void Core::RISAlgorithm(const Offer::Map &items)
     if( items.size() == 0)
     {
         std::clog<<"["<<tid<<"]"<<typeid(this).name()<<"::"<<__func__<< "error items size: 0"<<std::endl;
+        hm->place_clean = true;
         #ifdef DEBUG
             auto elapsed = std::chrono::high_resolution_clock::now() - start;
             long long microseconds = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
@@ -251,10 +257,18 @@ void Core::RISAlgorithm(const Offer::Map &items)
             OutPutSocialCampaignSet.insert((*p).second->campaign_id);
         }
     }
+    if(vResult.size() > params->getCapacity())
+    {
+        vResult.erase(vResult.begin() + params->getCapacity(), vResult.end());
+    }
     for(auto p = vResult.begin(); p != vResult.end(); ++p)
     {
         (*p)->load();
         (*p)->gen();
+    }
+    if(vResultSocial.size() > params->getCapacity())
+    {
+        vResultSocial.erase(vResultSocial.begin() + params->getCapacity(), vResultSocial.end());
     }
     for(auto p = vResultSocial.begin(); p != vResultSocial.end(); ++p)
     {

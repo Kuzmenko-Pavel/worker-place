@@ -53,7 +53,7 @@ nlohmann::json Offer::toJson() const
     j["campaign_id"] = campaign_id;
     j["campaign_guid"] = campaign_guid;
     j["unique"] = uniqueHits;
-    j["class"] = "";
+    j["c"] = "";
     j["retargeting"] = 0;
     j["is_recommended"] = 0;
     j["retargeting_type"] = "all";

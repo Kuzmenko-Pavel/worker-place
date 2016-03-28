@@ -47,7 +47,7 @@ bool HistoryManager::setDeprecatedOffers(const Offer::Vector &items)
             #endif // DEBUG
             pStmt = new Kompex::SQLiteStatement(cfg->pDb->pDatabase);
             sqlite3_snprintf(sizeof(buf),buf,"DELETE FROM Session WHERE id=%llu;"
-                             ,params->getUserKeyLong());
+            ,params->getUserKeyLong());
             pStmt->SqlStatement(buf);
             delete pStmt;
         }
