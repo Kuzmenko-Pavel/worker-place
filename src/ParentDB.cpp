@@ -475,7 +475,7 @@ void ParentDB::CampaignRemove(const std::string &CampaignId)
     Kompex::SQLiteStatement *pStmt;
     pStmt = new Kompex::SQLiteStatement(pdb);
     bzero(buf,sizeof(buf));
-    sqlite3_snprintf(sizeof(buf),buf,"DELETE FROM Offer WHERE guid='%s';",CampaignId.c_str());
+    sqlite3_snprintf(sizeof(buf),buf,"DELETE FROM Offer WHERE campaign_guid='%s';",CampaignId.c_str());
     try
     {
         pStmt->SqlStatement(buf);
