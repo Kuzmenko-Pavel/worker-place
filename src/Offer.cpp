@@ -54,8 +54,8 @@ nlohmann::json Offer::toJson() const
     j["campaign_guid"] = campaign_guid;
     j["unique"] = uniqueHits;
     j["c"] = "";
-    j["retargeting"] = 0;
-    j["is_recommended"] = 0;
+    j["retargeting"] = false;
+    j["is_recommended"] = false;
     j["retargeting_type"] = "all";
     j["html_notification"] = html_notification;
     j["branch"] = "NL30";
