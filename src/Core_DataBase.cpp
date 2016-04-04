@@ -121,7 +121,7 @@ bool Core_DataBase::getOffers(Offer::Map &items, Params *_params)
                  <<cmd
                  <<std::endl;
     }
-    where_offers = "WHERE ofrs.campaignId IN ("+ params->getSocialCampaigns() +") AND ofrs.id NOT IN ( SELECT [offerId] FROM Session where id=" + params->getUserKey() +" and uniqueHits <= 0)"; 
+    where_offers = "WHERE ofrs.campaignId IN ("+ params->getSocialCampaigns() +") AND ofrs.id NOT IN ( SELECT [id_ofr] FROM Session where id=" + params->getUserKey() +" and uniqueHits <= 0)"; 
     if (!params->getExclude().empty())
     {
         where_offers = "WHERE ofrs.campaignId IN ("+ params->getSocialCampaigns() +") AND ofrs.id NOT IN ("+ params->getExclude() +")"; 
