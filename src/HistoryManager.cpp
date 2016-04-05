@@ -21,6 +21,7 @@ void HistoryManager::startGetUserHistory(Params *_params)
 {
     params = _params;
     key = params->getUserKey();
+    place_clean = false;
 }
 
 bool HistoryManager::updateUserHistory(

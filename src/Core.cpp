@@ -132,6 +132,7 @@ void Core::resultHtml()
     nlohmann::json j;
     j["place"] = OffersToJson(vResult);
     j["social"] = OffersToJson(vResultSocial);
+    j["clean"] = hm->place_clean;
     retHtml = j.dump();
     #ifdef DEBUG
         auto elapsed = std::chrono::high_resolution_clock::now() - start;
@@ -150,6 +151,7 @@ void Core::RISAlgorithm(const Offer::Map &items)
     #endif // DEBUG
     Offer::MapRate result;
     Offer::MapRate resultSocial;
+    unsigned int loopCount;
     if( items.size() == 0)
     {
         std::clog<<"["<<tid<<"]"<<typeid(this).name()<<"::"<<__func__<< "error items size: 0"<<std::endl;
@@ -179,6 +181,10 @@ void Core::RISAlgorithm(const Offer::Map &items)
                 }
         }
     }
+    if (result.size() < params->getCapacity())
+    {
+        hm->place_clean = true;
+    }
 
     //teaser by unique id and company
     unsigned int passage;
@@ -205,6 +211,7 @@ void Core::RISAlgorithm(const Offer::Map &items)
         passage++;
     }
     
+    passage = 0;
     while ((passage < params->getCapacity()) && (vResultSocial.size() < params->getCapacity()))
     {
         for(auto p = resultSocial.begin(); p != resultSocial.end(); ++p)
@@ -256,6 +263,22 @@ void Core::RISAlgorithm(const Offer::Map &items)
             OutPutSocialOfferSet.insert((*p).second->id_int);
             OutPutSocialCampaignSet.insert((*p).second->campaign_id);
         }
+    }
+    loopCount = vResult.size();
+    while(loopCount < params->getCapacity())
+    {
+        for(auto p = result.begin(); p != result.end(); ++p)
+        {
+            if(vResult.size() < params->getCapacity())
+            {
+                #ifdef DEBUG
+                    printf("%s\n","place_clean in appender");
+                #endif // DEBUG
+                hm->place_clean = true;
+                vResult.push_back((*p).second);
+            }
+        }
+        loopCount++;
     }
     if(vResult.size() > params->getCapacity())
     {
