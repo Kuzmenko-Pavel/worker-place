@@ -79,10 +79,12 @@ void CgiService::run()
             bcore->ClearSession(true);
         }
     
+        #ifdef DEBUG
         if(cfg->logMonitor)
         {
             stat->cpuUsage();
         }
+        #endif // DEBUG
         loop_count++;
         sleep(1);
     }
