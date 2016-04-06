@@ -43,6 +43,8 @@ private:
     ///result offers vector
     Offer::Vector vResult;
     Offer::Vector vResultSocial;
+    Offer::MapRate result;
+    Offer::MapRate resultSocial;
     ///all offers to show
     Offer::Map items;
     ///campaigns to show set

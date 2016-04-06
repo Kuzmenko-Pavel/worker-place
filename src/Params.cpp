@@ -98,7 +98,7 @@ Params &Params::parse()
     if (params_.count("social") && params_["social"].is_string())
     {
         std::string soc = params_["social"];
-        replaceSymbol = boost::make_u32regex("([A-Za-z\\.:\\-\\s_]+;)|([A-Za-z\\.:\\-\\s_]+)");
+        replaceSymbol = boost::make_u32regex("([A-Za-z\\.:\\-\\s_]+;)|(;[A-Za-z\\.:\\-\\s_]+)|([A-Za-z\\.:\\-\\s_]+)");
         soc = boost::u32regex_replace(soc,replaceSymbol,"");
         boost::trim(soc);
         if(soc != "")
@@ -110,7 +110,7 @@ Params &Params::parse()
     if (params_.count("place") && params_["place"].is_string())
     {
         std::string pla = params_["place"];
-        replaceSymbol = boost::make_u32regex("([A-Za-z\\.:\\-\\s_]+;)|([A-Za-z\\.:\\-\\s_]+)");
+        replaceSymbol = boost::make_u32regex("([A-Za-z\\.:\\-\\s_]+;)|(;[A-Za-z\\.:\\-\\s_]+)|([A-Za-z\\.:\\-\\s_]+)");
         pla = boost::u32regex_replace(pla,replaceSymbol,"");
         boost::trim(pla);
         if(pla != "")
@@ -121,7 +121,7 @@ Params &Params::parse()
     if (params_.count("exclude") && params_["exclude"].is_string())
     {
         std::string exc = params_["exclude"];
-        replaceSymbol = boost::make_u32regex("([A-Za-z\\.:\\-\\s_]+;)|([A-Za-z\\.:\\-\\s_]+)");
+        replaceSymbol = boost::make_u32regex("([A-Za-z\\.:\\-\\s_]+;)|(;[A-Za-z\\.:\\-\\s_]+)|([A-Za-z\\.:\\-\\s_]+)");
         exc = boost::u32regex_replace(exc,replaceSymbol,"");
         boost::trim(exc);
         if(exc != "")

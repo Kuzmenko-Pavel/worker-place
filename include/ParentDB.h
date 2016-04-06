@@ -23,6 +23,8 @@ public:
     bool ClearSession(bool);
 
 private:
+    std::vector<mongo::BSONObj> bsonobjects;
+    std::vector<mongo::BSONObj>::const_iterator x;
     bool fConnectedToMainDatabase;
     Kompex::SQLiteDatabase *pdb;
     char buf[262144];

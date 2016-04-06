@@ -71,8 +71,6 @@ private:
 
    /// Очередь сообщений об изменениях в offer
     AMQPQueue *mq_advertise_;
-    /// Очередь сообщений об изменениях в конфигурации
-    AMQPQueue *mq_account_;
 
     std::string toString(AMQPMessage *m);
     bool cmdParser(const std::string &cmd, std::string &offerId, std::string &campaignId);
