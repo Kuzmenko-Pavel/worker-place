@@ -212,7 +212,6 @@ void BaseCore::InitMessageQueue()
         std::string mq_advertise_name( "getmyad.advertise." + postfix );
         std::string mq_campaign_name( "getmyad.campaign." + postfix );
         std::string mq_informer_name( "getmyad.informer." + postfix );
-        std::string mq_account_name( "getmyad.account." + postfix );
 
         // Объявляем очереди
         mq_campaign_ = amqp_->createQueue();
@@ -221,17 +220,14 @@ void BaseCore::InitMessageQueue()
         mq_informer_->Declare(mq_informer_name, AMQP_AUTODELETE | AMQP_EXCLUSIVE);
         mq_advertise_ = amqp_->createQueue();
         mq_advertise_->Declare(mq_advertise_name, AMQP_AUTODELETE | AMQP_EXCLUSIVE);
-        mq_account_ = amqp_->createQueue();
-        mq_account_->Declare(mq_account_name, AMQP_AUTODELETE | AMQP_EXCLUSIVE);
 
         // Привязываем очереди
         exchange_->Bind(mq_advertise_name, "advertise.#");
         exchange_->Bind(mq_campaign_name, "campaign.#");
         exchange_->Bind(mq_informer_name, "informer.#");
-        exchange_->Bind(mq_account_name, "account.#");
 
         std::clog<<"Created ampq queues: "<<mq_campaign_name<<","<<mq_informer_name<<","
-                 <<mq_advertise_name<<","<<mq_account_name<<std::endl;
+                 <<mq_advertise_name<<std::endl;
     }
     catch (AMQPException &ex)
     {
@@ -297,7 +293,6 @@ std::string BaseCore::Status(const std::string &server_name)
     out << "</td></tr>";
     out << "<tr><td>Общее кол-во показов:</td><td><b>" << offer_processed_;
     out << "</b> (" << social_processed_ << " из них социальная реклама) "<< "</td></tr>";
-    out << "<tr><td>Общее кол-во ретаргетинговых показов:</td><td><b>" << retargeting_processed_<< "</b></td></tr>";
     out << "<tr><td>Имя сервера: </td> <td>" << (server_name.empty() ? server_name : "неизвестно") <<"</td></tr>";
     out << "<tr><td>IP сервера: </td> <td>" <<Config::Instance()->server_ip_ <<"</td></tr>";
     out << "<tr><td>Текущее время: </td> <td>"<<boost::posix_time::second_clock::local_time()<<"</td></tr>";

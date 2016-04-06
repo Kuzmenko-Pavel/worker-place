@@ -45,6 +45,7 @@ public:
     long long int token_int = 0;
     std::chrono::milliseconds ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch());
     std::string token;          ///< Токен для проверки ссылки
+    nlohmann::json j;
     
     Offer(unsigned long long id_int,
           unsigned long long campaign_id,
@@ -68,7 +69,7 @@ public:
     void gen();
     void load();
 
-    nlohmann::json toJson() const;
+    nlohmann::json toJson();
     private:
         char *cmd;
         size_t len;

@@ -41,21 +41,21 @@ bool HistoryManager::setDeprecatedOffers(const Offer::Vector &items)
 
     if(place_clean)
     {
+        pStmt = new Kompex::SQLiteStatement(cfg->pDb->pDatabase);
         try
         {
             #ifdef DEBUG
                 printf(" %s place_clean \n", __func__);
             #endif // DEBUG
-            pStmt = new Kompex::SQLiteStatement(cfg->pDb->pDatabase);
             sqlite3_snprintf(sizeof(buf),buf,"DELETE FROM Session WHERE id=%llu;"
             ,params->getUserKeyLong());
             pStmt->SqlStatement(buf);
-            delete pStmt;
         }
         catch(Kompex::SQLiteException &ex)
         {
             std::clog<<"HistoryManager::setDeprecatedOffers delete session error: "<<ex.GetString()<<std::endl;
         }
+        delete pStmt;
     place_clean = true;
     }
 

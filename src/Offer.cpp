@@ -32,15 +32,16 @@ Offer::Offer(unsigned long long id_int,
 
 Offer::~Offer()
 {
+    j.clear(); 
     delete []cmd;
 }
 
-nlohmann::json Offer::toJson() const
+nlohmann::json Offer::toJson()
 {
     #ifdef DEBUG
         auto start = std::chrono::high_resolution_clock::now();
     #endif // DEBUG
-    nlohmann::json j;
+    j.clear();
     j["id"] = id_int;
     j["guid"] = id;
     j["title"] = title;

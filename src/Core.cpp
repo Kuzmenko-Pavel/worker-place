@@ -77,8 +77,6 @@ void Core::log()
 //-------------------------------------------------------------------------------------------------------------------
 void Core::ProcessSaveResults()
 {
-    request_processed_++;
-
     log();
     if (params->getExclude().empty())
     {
@@ -92,6 +90,8 @@ void Core::ProcessSaveResults()
     }
     //clear all offers map
     items.clear();
+    result.clear();
+    resultSocial.clear();
     vResult.clear();
     vResultSocial.clear();
     OutPutCampaignSet.clear();
@@ -134,6 +134,7 @@ void Core::resultHtml()
     j["social"] = OffersToJson(vResultSocial);
     j["clean"] = hm->place_clean;
     retHtml = j.dump();
+    j.clear();
     #ifdef DEBUG
         auto elapsed = std::chrono::high_resolution_clock::now() - start;
         long long microseconds = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
@@ -144,13 +145,12 @@ void Core::resultHtml()
 //-------------------------------------------------------------------------------------------------------------------
 void Core::RISAlgorithm(const Offer::Map &items)
 {
+    request_processed_++;
     #ifdef DEBUG
         auto start = std::chrono::high_resolution_clock::now();
         printf("%s\n","------------------------------------------------------------------");
         printf("RIS offers %lu \n",items.size());
     #endif // DEBUG
-    Offer::MapRate result;
-    Offer::MapRate resultSocial;
     unsigned int loopCount;
     if( items.size() == 0)
     {
@@ -288,6 +288,7 @@ void Core::RISAlgorithm(const Offer::Map &items)
     {
         (*p)->load();
         (*p)->gen();
+        offer_processed_++;
     }
     if(vResultSocial.size() > params->getCapacity())
     {
@@ -297,6 +298,7 @@ void Core::RISAlgorithm(const Offer::Map &items)
     {
         (*p)->load();
         (*p)->gen();
+        social_processed_++;
     }
     #ifdef DEBUG
         auto elapsed = std::chrono::high_resolution_clock::now() - start;

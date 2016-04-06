@@ -108,10 +108,6 @@ void CgiService::Response(FCGX_Request *req,
 {
     try
     {
-        if(content.empty())
-        {
-            return;
-        }
         if(FCGX_GetError(req->err) != 0)
         {
             Log::warn("------------ ERROR ----------");
@@ -415,6 +411,7 @@ void CgiService::ProcessRequest(FCGX_Request *req, Core *core)
     script_name.clear();
     cookie_value.clear();
     postq.clear();
+    return;
 }
 
 void CgiService::SignalHandler(int signum)
