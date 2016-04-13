@@ -154,7 +154,10 @@ void Core::RISAlgorithm(const Offer::Map &items)
     unsigned int loopCount;
     if( items.size() == 0)
     {
-        std::clog<<"["<<tid<<"]"<<typeid(this).name()<<"::"<<__func__<< "error items size: 0"<<std::endl;
+        std::clog<<"["<<tid<<"]"<<typeid(this).name()<<"::"<<__func__<< " error items size: 0 "
+             <<params->get_.c_str()
+             <<params->post_.c_str()
+            <<std::endl;
         hm->place_clean = true;
         #ifdef DEBUG
             auto elapsed = std::chrono::high_resolution_clock::now() - start;
