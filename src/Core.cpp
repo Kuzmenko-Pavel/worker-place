@@ -291,6 +291,10 @@ void Core::RISAlgorithm(const Offer::Map &items)
     {
         (*p)->load();
         (*p)->gen();
+        if((*p)->rating < 1.0 )
+        {
+            hm->place_clean = true;
+        }
         offer_processed_++;
     }
     if(vResultSocial.size() > params->getCapacity())
