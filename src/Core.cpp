@@ -154,12 +154,12 @@ void Core::RISAlgorithm(const Offer::Map &items)
     unsigned int loopCount;
     if( items.size() == 0)
     {
+        hm->place_clean = true;
+        #ifdef DEBUG
         std::clog<<"["<<tid<<"]"<<typeid(this).name()<<"::"<<__func__<< " error items size: 0 "
              <<params->get_.c_str()
              <<params->post_.c_str()
             <<std::endl;
-        hm->place_clean = true;
-        #ifdef DEBUG
             auto elapsed = std::chrono::high_resolution_clock::now() - start;
             long long microseconds = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
             printf("Time %s taken return items.size() == 0: %lld \n", __func__,  microseconds);
@@ -204,10 +204,12 @@ void Core::RISAlgorithm(const Offer::Map &items)
                 {
                     break;
                 }
-
-                vResult.push_back((*p).second);
-                OutPutOfferSet.insert((*p).second->id_int);
-                OutPutCampaignSet.insert((*p).second->campaign_id);
+                if((*p).second->rating > 1000.0)
+                {
+                    vResult.push_back((*p).second);
+                    OutPutOfferSet.insert((*p).second->id_int);
+                    OutPutCampaignSet.insert((*p).second->campaign_id);
+                }
 
             }
         }
@@ -291,7 +293,7 @@ void Core::RISAlgorithm(const Offer::Map &items)
     {
         (*p)->load();
         (*p)->gen();
-        if((*p)->rating < 1.0 )
+        if((*p)->rating < 1000.0 )
         {
             hm->place_clean = true;
         }
