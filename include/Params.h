@@ -44,6 +44,7 @@ public:
     std::string getInformerId() const;
     boost::posix_time::ptime getTime() const;
     bool isTestMode() const;
+    bool isStorageMode() const;
 
 private:
     boost::u32regex replaceSymbol;
@@ -55,6 +56,7 @@ private:
     std::vector<std::string> place;
     std::vector<std::string> social;
     bool test_mode;
+    bool storage;
 };
 
 #endif // PARAMS_H
