@@ -146,6 +146,10 @@ Params &Params::parse()
     {
         test_mode = params_["test"];
     }
+    if (params_.count("storage") && params_["storage"].is_boolean())
+    {
+        storage = params_["storage"];
+    }
 
     return *this;
 }
@@ -182,6 +186,10 @@ std::string Params::getExclude() const
 bool Params::isTestMode() const
 {
     return test_mode;
+}
+bool Params::isStorageMode() const
+{
+    return storage;
 }
 long long Params::getInformerIdInt() const
 {

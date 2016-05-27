@@ -78,7 +78,7 @@ void Core::log()
 void Core::ProcessSaveResults()
 {
     log();
-    if (params->getExclude().empty())
+    if (!params->isStorageMode())
     {
         hm->updateUserHistory(vResult);
     }
