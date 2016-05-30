@@ -116,11 +116,7 @@ bool BaseCore::ProcessMQ()
                     if(cmdParser(m1,ofrId,cmgId))
                     {
                         mongo::Query q;
-#ifdef DUMMY
-                        q = mongo::Query("{$and: [{ \"retargeting\" : false}, {\"type\" : \"teaser\"}, { \"guid\" : \""+ofrId+"\"}]}");
-#else
                         q = QUERY("guid" << ofrId);
-#endif // DUMMY
                         pdb->OfferRatingLoad(q);
                     }
                 }
