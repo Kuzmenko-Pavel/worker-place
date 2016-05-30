@@ -163,7 +163,7 @@ void ParentDB::OfferRatingLoad(mongo::Query q_correct)
     Kompex::SQLiteStatement *pStmt;
     mongo::BSONObj f = BSON("guid"<<1<<"guid_int"<<1<<"full_rating"<<1);
     auto cursor = monga_main->query(cfg->mongo_main_db_ + ".offer", q_correct, 0, 0, &f);
-
+    long long long_id = 0;
     pStmt = new Kompex::SQLiteStatement(pdb);
 
     bsonobjects.clear();
@@ -183,36 +183,56 @@ void ParentDB::OfferRatingLoad(mongo::Query q_correct)
                 {
                     continue;
                 }
-
+            long_id = (*x).getField("guid_int").numberLong();
             bzero(buf,sizeof(buf));
-            sqlite3_snprintf(sizeof(buf),buf,
-    "INSERT OR REPLACE INTO Offer2Rating (id, rating) VALUES(%llu,%f);",
-                             (*x).getField("guid_int").numberLong(),
-                             (*x).getField("full_rating").numberDouble()
-                            );
-
+            sqlite3_snprintf(sizeof(buf),buf,"SELECT id FROM Offer WHERE id=%lld;", long_id);
+            bool find = false; 
             try
             {
-                pStmt->SqlStatement(buf);
+                pStmt->Sql(buf);
+                while(pStmt->FetchRow())
+                {
+                    find = true;
+                    break;
+                }
+                pStmt->FreeQuery();
             }
             catch(Kompex::SQLiteException &ex)
             {
-                #ifdef DEBUG
-                printf("%s\n","--------------------------------------------");
-                printf("%s\n","INSERT OR REPLACE INTO Offer2Rating");
-                printf("%s\n",(*x).toString().c_str());
-                #endif // DEBUG
                 logDb(ex);
-                pStmt->FreeQuery();
+            }
+            if (find)
+            {
+                bzero(buf,sizeof(buf));
+                sqlite3_snprintf(sizeof(buf),buf,
+        "INSERT OR REPLACE INTO Offer2Rating (id, rating) VALUES(%llu,%f);",
+                                 long_id,
+                                 (*x).getField("full_rating").numberDouble()
+                                );
+
+                try
+                {
+                    pStmt->SqlStatement(buf);
+                }
+                catch(Kompex::SQLiteException &ex)
+                {
+                    #ifdef DEBUG
+                    printf("%s\n","--------------------------------------------");
+                    printf("%s\n","INSERT OR REPLACE INTO Offer2Rating");
+                    printf("%s\n",(*x).toString().c_str());
+                    #endif // DEBUG
+                    logDb(ex);
+                    pStmt->FreeQuery();
+                }
+                transCount++;
+                if (transCount % 1000 == 0)
+                {
+                    pStmt->CommitTransaction();
+                    pStmt->FreeQuery();
+                    pStmt->BeginTransaction();
+                }
             }
             x++;
-            transCount++;
-            if (transCount % 1000 == 0)
-            {
-                pStmt->CommitTransaction();
-                pStmt->FreeQuery();
-                pStmt->BeginTransaction();
-            }
 
         }
         bsonobjects.clear();

@@ -56,7 +56,7 @@ bool Core_DataBase::getOffers(Offer::Map &items, Params *_params)
         ofrs.html_notification\
         ";
     where_offers = "WHERE ofrs.campaignId IN ("+ params->getCampaigns() +") AND ofrs.id NOT IN ( SELECT [id_ofr] FROM Session where id=" + params->getUserKey() +" and uniqueHits <= 0)"; 
-    if (!params->getExclude().empty())
+    if (params->isStorageMode())
     {
         where_offers = "WHERE ofrs.campaignId IN ("+ params->getCampaigns() +") AND ofrs.id NOT IN ("+ params->getExclude() +")"; 
     }
