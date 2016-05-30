@@ -169,20 +169,20 @@ void ParentDB::OfferRatingLoad(mongo::Query q_correct)
     bsonobjects.clear();
     try
     {
-        unsigned int transCount = 0;
-        pStmt->BeginTransaction();
         while (cursor->more())
         {
             mongo::BSONObj itv = cursor->next();
             bsonobjects.push_back(itv.copy());
         }
-    x = bsonobjects.begin();
-    while(x != bsonobjects.end()) {
-            std::string id = (*x).getStringField("guid");
-            if (id.empty())
-            {
-                continue;
-            }
+        unsigned int transCount = 0;
+        pStmt->BeginTransaction();
+        x = bsonobjects.begin();
+        while(x != bsonobjects.end()) {
+                std::string id = (*x).getStringField("guid");
+                if (id.empty())
+                {
+                    continue;
+                }
 
             bzero(buf,sizeof(buf));
             sqlite3_snprintf(sizeof(buf),buf,
@@ -203,6 +203,7 @@ void ParentDB::OfferRatingLoad(mongo::Query q_correct)
                 printf("%s\n",(*x).toString().c_str());
                 #endif // DEBUG
                 logDb(ex);
+                pStmt->FreeQuery();
             }
             x++;
             transCount++;
@@ -324,6 +325,7 @@ void ParentDB::OfferLoad(mongo::Query q_correct, mongo::BSONObj &camp)
             {
                 logDb(ex);
                 skipped++;
+                pStmt->FreeQuery();
             }
             transCount++;
             i++;
