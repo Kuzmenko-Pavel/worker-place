@@ -204,7 +204,7 @@ void Core::RISAlgorithm(const Offer::Map &items)
                 {
                     break;
                 }
-                if((*p).second->rating > 1000.0)
+                if((*p).second->rating > params->getRatingDivision())
                 {
                     vResult.push_back((*p).second);
                     OutPutOfferSet.insert((*p).second->id_int);
@@ -293,7 +293,7 @@ void Core::RISAlgorithm(const Offer::Map &items)
     {
         (*p)->load();
         (*p)->gen();
-        if((*p)->rating < 1000.0 )
+        if((*p)->rating < params->getRatingDivision() )
         {
             hm->place_clean = true;
         }

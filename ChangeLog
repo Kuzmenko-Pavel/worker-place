@@ -1,4 +1,5 @@
-[33m2cfb932 ([1;36mHEAD[m[33m, [1;31morigin/master[m[33m, [1;32mmaster[m[33m)[m change sqlite
+[33mde8fa2b ([1;36mHEAD[m[33m, [1;31morigin/master[m[33m, [1;32mmaster[m[33m)[m find memory leak
+[33m2cfb932[m change sqlite
 [33md00c871[m fix excludet offer for old browser
 [33m4854ad0[m change clean history
 [33m46de523[m change history clean

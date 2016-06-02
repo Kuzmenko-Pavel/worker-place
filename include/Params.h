@@ -39,6 +39,7 @@ public:
     std::string getSocialCampaigns() const;
     std::string getExclude() const;
     unsigned int getCapacity() const;
+    int getRatingDivision() const;
     long long  getInformerIdInt() const;
     unsigned long long getUserKeyLong() const;
     std::string getInformerId() const;
@@ -50,6 +51,7 @@ private:
     boost::u32regex replaceSymbol;
     nlohmann::json json_;
     unsigned int capacity;
+    int rating_division = 1000;
     std::string informer_id;
     long long informer_id_int;
     std::vector<std::string> exclude;
