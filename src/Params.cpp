@@ -133,6 +133,10 @@ Params &Params::parse()
     {
         capacity = params_["capacity"];
     }
+    if (params_.count("rating_division") && params_["rating_division"].is_number())
+    {
+        rating_division = params_["rating_division"];
+    }
     if (params_.count("informer_id") && params_["informer_id"].is_string())
     {
         informer_id = params_["informer_id"];
@@ -198,4 +202,8 @@ long long Params::getInformerIdInt() const
 unsigned int Params::getCapacity() const
 {
     return capacity;
+}
+int Params::getRatingDivision() const
+{
+    return rating_division;
 }
