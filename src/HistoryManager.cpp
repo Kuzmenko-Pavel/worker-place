@@ -1,8 +1,8 @@
 #include "HistoryManager.h"
 #include "Config.h"
 #include "Log.h"
-#include "KompexSQLiteStatement.h"
-#include "KompexSQLiteException.h"
+#include <KompexSQLiteStatement.h>
+#include <KompexSQLiteException.h>
 #include <boost/algorithm/string.hpp>
 #include <string>
 #include "../config.h"

@@ -1,10 +1,9 @@
-#include "DB.h"
-
 #include <boost/regex.hpp>
-
+#include <bsoncxx/builder/basic/document.hpp>
+#include <bsoncxx/builder/basic/kvp.hpp>
+#include <bsoncxx/types.hpp>
 #include <sstream>
-
-#include <mongo/util/net/hostandport.h>
+#include <AMQPcpp.h>
 
 #include "../config.h"
 
@@ -16,6 +15,9 @@
 #include "CpuStat.h"
 
 #define MAXCOUNT 1000
+
+using bsoncxx::builder::basic::document;
+using bsoncxx::builder::basic::kvp;
 
 BaseCore::BaseCore()
 {
@@ -39,12 +41,7 @@ std::string BaseCore::toString(AMQPMessage *m)
     unsigned len;
     char *pMes;
 
-#ifdef AMQPCPP_OLD
-    pMes = m->getMessage();
-    len = strlen(pMes);
-#else
     pMes = m->getMessage(&len);
-#endif // AMQPCPP_OLD
 
     return std::string(pMes,len);
 }
@@ -66,11 +63,6 @@ bool BaseCore::ProcessMQ()
             while(m->getMessageCount() > -1 && stopCount--)
             {
                 mq_log_.push_back(m->getRoutingKey() + ":" +toString(m) + "</br>");
-                if(cfg->logMQ)
-                {
-                    std::clog<<"mq: cmd:"<<m->getRoutingKey()<<toString(m)<<std::endl;
-                }
-
                 if(m->getRoutingKey() == "campaign.update")
                 {
                     std::string CampaignId = toString(m);
@@ -104,20 +96,14 @@ bool BaseCore::ProcessMQ()
             while(m->getMessageCount() > -1 && stopCount--)
             {
                 mq_log_.push_back(m->getRoutingKey() + ":" +toString(m) + "</br>");
-
-                if(cfg->logMQ)
-                {
-                    std::clog<<"mq: cmd:"<<m->getRoutingKey()<<toString(m)<<std::endl;
-                }
-
                 m1 = toString(m);
                 if(m->getRoutingKey() == "advertise.update")
                 {
                     if(cmdParser(m1,ofrId,cmgId))
                     {
-                        mongo::Query q;
-                        q = QUERY("guid" << ofrId);
-                        pdb->OfferRatingLoad(q);
+                        auto filter = document{};
+                        filter.append(kvp("guid", ofrId));
+                        pdb->OfferRatingLoad(filter);
                     }
                 }
                 else if(m->getRoutingKey() == "advertise.delete")
@@ -139,12 +125,7 @@ bool BaseCore::ProcessMQ()
             while(m->getMessageCount() > -1 && stopCount--)
             {
                 mq_log_.push_back(m->getRoutingKey() + ":" +toString(m) + "</br>");
-
-                if(cfg->logMQ)
-                {
-                    std::clog<<"mq: cmd:"<<m->getRoutingKey()<<toString(m)<<std::endl;
-                }
-                else if(m->getRoutingKey() == "informer.updateRating")
+                if(m->getRoutingKey() == "informer.updateRating")
                 {
                     pdb->loadRating(toString(m));
                 }
@@ -300,12 +281,11 @@ std::string BaseCore::Status(const std::string &server_name)
 
     out << "<tr><td>Основная база данных:</td> <td>" <<
         cfg->mongo_main_db_<< "/";
-    out << "<br/>slave_ok = " << (cfg->mongo_main_slave_ok_? "true" : "false");
     out << "<br/>replica set=";
-    if (cfg->mongo_main_set_.empty())
+    if (cfg->mongo_main_url_.empty())
         out << "no set";
     else
-        out << cfg->mongo_main_set_;
+        out << cfg->mongo_main_url_;
     out << "</td></tr>";
     out << "<tr><td>AMQP:</td><td>" << (amqp_? "активен" : "не активен") << "</td></tr>";
     out <<  "<tr><td>Сборка: </td><td>" << __DATE__ << " " << __TIME__<<"</td></tr>";
