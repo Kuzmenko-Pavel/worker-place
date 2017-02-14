@@ -6,13 +6,7 @@
 #include <boost/date_time.hpp>
 #include <boost/circular_buffer.hpp>
 
-#ifndef AMQPCPP_OLD
 #include <AMQPcpp.h>
-#else
-#include <amqpcpp.h>
-#endif
-
-
 #include "DataBase.h"
 #include "ParentDB.h"
 
@@ -75,7 +69,7 @@ private:
     std::string toString(AMQPMessage *m);
     bool cmdParser(const std::string &cmd, std::string &offerId, std::string &campaignId);
     ParentDB *pdb;
-    boost::circular_buffer<string> mq_log_ = boost::circular_buffer<string>(100);
+    boost::circular_buffer<std::string> mq_log_ = boost::circular_buffer<std::string>(100);
 };
 
 

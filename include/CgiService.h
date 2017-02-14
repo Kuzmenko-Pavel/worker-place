@@ -8,7 +8,6 @@
 #include "CpuStat.h"
 
 #include <fcgiapp.h>
-#include <mongo/client/dbclient_rs.h>
 
 class Core;
 
@@ -90,7 +89,6 @@ private:
     CpuStat *stat;
     bool fConnectedToLogDatabase;
 
-    mongo::DBClientReplicaSet *monga_log;
     bool ConnectLogDatabase();
     static void SignalHandler(int signum);
 };
