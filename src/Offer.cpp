@@ -20,14 +20,13 @@ Offer::Offer(unsigned long long id_int,
              ):
     id_int(id_int),
     campaign_id(campaign_id),
-    len(CMD_SIZE),
     rating(rating),
     uniqueHits(uniqueHits),
     social(social),
     unique_by_campaign((unsigned)unique_by_campaign),
     html_notification(html_notification)
 {
-    cmd = new char[len];
+    cmd = new char[CMD_SIZE];
 }
 
 Offer::~Offer()

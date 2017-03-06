@@ -9,12 +9,12 @@
     <user>www-data</user>
     <group>www-data</group>
     <!--путь к файлу сокета-->
-    <socket_path>/run/workerd/sockp</socket_path>
+    <socket_path>/run/worker-place/sock</socket_path>
     <!--количество ниток-->
     <children>1</children>
 
     <!--путь к очереди сообщений-->
-    <mq_path>worker:worker@rg.yottos.com/worker</mq_path>
+    <mq_path>test-worker:test-worker@srv-4.yottos.com/test-worker</mq_path>
 
     <!--путь к фалу базы данных sqlite или :memory:-->
     <sqlite>

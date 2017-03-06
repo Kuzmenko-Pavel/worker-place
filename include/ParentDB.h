@@ -3,6 +3,7 @@
 #include <bsoncxx/builder/basic/document.hpp>
 #include <KompexSQLiteDatabase.h>
 #include <KompexSQLiteException.h>
+#include "json.h"
 
 using bsoncxx::builder::basic::document;
 
@@ -14,11 +15,11 @@ public:
 
     void loadRating(const std::string &id="");
     void OfferRatingLoad(document &query);
-    void OfferLoad(document &query, document &camp);
+    void OfferLoad(document &query, nlohmann::json &camp);
     void OfferRemove(const std::string &id);
     void CampaignLoad(const std::string &campaignId = std::string());
     void CampaignLoad(document &query);
-    void CampaignRemove(const std::string &aCampaignId);
+    void CampaignRemove(const std::string &CampaignId);
 
     bool ClearSession(bool);
 
